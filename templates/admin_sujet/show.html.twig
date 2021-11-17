@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sujet{% endblock %}
+
+{% block body %}
+    <h1>Sujet</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sujet.id }}</td>
+            </tr>
+            <tr>
+                <th>Label</th>
+                <td>{{ sujet.label }}</td>
+            </tr>
+            <tr>
+                <th>Corps</th>
+                <td>{{ sujet.corps }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_sujet_index') }}">back to list</a>
+
+    <a href="{{ path('admin_sujet_edit', {'id': sujet.id}) }}">edit</a>
+
+    {{ include('admin_sujet/_delete_form.html.twig') }}
+{% endblock %}
